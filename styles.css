@@ -1,0 +1,49 @@
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+#switch {
+  visibility: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: white;
+  color: #111;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -2000px;
+  width: 350px;
+  height: 150px;
+  background: grey;
+  border-radius: 200px;
+  position: relative;
+}
+
+label::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 100%;
+  transition: 0.4s;
+}
+
+/* CSS 2 */
+input:checked + label {
+  background: #7ed957;
+}
+
+input:checked + label::after {
+  left: calc(60% - 5px);
+  transform: translateX(10%);
+}
